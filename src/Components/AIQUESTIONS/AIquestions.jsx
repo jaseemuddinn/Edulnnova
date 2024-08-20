@@ -3,7 +3,9 @@ import "./AIquestions.css";
 import backbutton from "../../assets/back.png";
 import home from "../../assets/homepage.jpg";
 import MCQ from "../MCQ/MCQ.jsx";
-import Subjective from '../SUBJECTIVE/Subjective.jsx';
+import SUBJECTIVE from '../SUBJECTIVE/Subjective.jsx';
+import AR from '../AR/AR.jsx';
+import Fillups from "../FILLUPS/Fillups.jsx"
 
 
 const AIquestions = ({ onBackToHome }) => {
@@ -134,10 +136,10 @@ const AIquestions = ({ onBackToHome }) => {
 
     return (
         <div className="ai-questions-container">
-            {(step === 1 || step === 2 || step === 3 || step === 4 ) && (
+            {/* {(step === 1 || step === 2 || step === 3 || step === 4 ) && (
                 <img src={home} alt="Back" className="back-to-home-button" onClick={onBackToHome} />
-            )}
-            {(step === 2 || step === 3 || step === 4) && (
+            )} */}
+            {( step ===1 || step === 2 || step === 3 || step === 4) && (
                 <img src={backbutton} alt="Back" className="top-corner-back-button" onClick={handleBack} />
             )}
             <h1 className='heading'>Generative Assessment</h1>
@@ -237,6 +239,15 @@ const AIquestions = ({ onBackToHome }) => {
                         <>
                             {questionType === 'mcq' && (
                                 <MCQ question={currentQuestion} onAnswerSubmit={handleAnswerSubmit} />
+                            )}
+                            {questionType === 'subjective' && (
+                                <SUBJECTIVE question={currentQuestion} onAnswerSubmit={handleAnswerSubmit} />
+                            )}
+                            {questionType === 'assertion reasoning' && (
+                                <AR question={currentQuestion} onAnswerSubmit={handleAnswerSubmit} />
+                            )}
+                            {questionType === 'fillups' && (
+                                <Fillups question={currentQuestion} onAnswerSubmit={handleAnswerSubmit} />
                             )}
                                 {/* // <Subjective question={currentQuestion} onAnswerSubmit={handleAnswerSubmit} />
                                 // <MCQ question={currentQuestion} onAnswerSubmit={handleAnswerSubmit} />

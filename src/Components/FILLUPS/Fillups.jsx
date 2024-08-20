@@ -1,47 +1,32 @@
 import React, { useState } from 'react';
-import './MCQ.css';
+import "./Fillups.css"
 
-const MCQ = () => {
-  const [selectedOption, setSelectedOption] = useState({});
+const FILLUPS = () => {
+  const [userInput, setUserInput] = useState({});
   const [isSubmitted, setIsSubmitted] = useState({});
   const [feedback, setFeedback] = useState({});
   
   const questions = [
     {
       id: 1,
-      question: "What is the capital of France?",
-      options: ["Berlin", "Madrid", "Paris", "Rome"],
+      question: "The capital of France is ____.",
       correctAnswer: "Paris"
     },
     {
       id: 2,
-      question: "Which planet is known as the Red Planet?",
-      options: ["Earth", "Mars", "Jupiter", "Saturn"],
+      question: "The Red Planet is known as ____.",
       correctAnswer: "Mars"
     },
     {
       id: 3,
-      question: "Who wrote 'Hamlet'?",
-      options: ["Charles Dickens", "William Shakespeare", "Mark Twain", "Ernest Hemingway"],
-      correctAnswer: "William Shakespeare"
-    },
-    {
-      id: 4,
-      question: "Who wrote 'Hamlet'?",
-      options: ["Charles Dickens", "William Shakespeare", "Mark Twain", "Ernest Hemingway"],
-      correctAnswer: "William Shakespeare"
-    },
-    {
-      id: 5,
-      question: "Who wrote 'Hamlet'?",
-      options: ["Charles Dickens", "William Shakespeare", "Mark Twain", "Ernest Hemingway"],
+      question: "'Hamlet' was written by ____.",
       correctAnswer: "William Shakespeare"
     }
   ];
 
-  const handleOptionChange = (questionId, event) => {
-    setSelectedOption({
-      ...selectedOption,
+  const handleInputChange = (questionId, event) => {
+    setUserInput({
+      ...userInput,
       [questionId]: event.target.value,
     });
   };
@@ -52,7 +37,7 @@ const MCQ = () => {
       [questionId]: true,
     });
 
-    if (selectedOption[questionId] === questions.find(q => q.id === questionId).correctAnswer) {
+    if (userInput[questionId]?.trim().toLowerCase() === questions.find(q => q.id === questionId).correctAnswer.toLowerCase()) {
       setFeedback({
         ...feedback,
         [questionId]: 'Correct!',
@@ -105,29 +90,21 @@ const MCQ = () => {
           </div>
         </div>
         <div className="qa-pane">
-          <h2>QA Pane</h2>
+          <h2>Fill-Ups Questions</h2>
           <div className="questions">
             {questions.map((question) => (
               <div key={question.id} className="question-type">
                 <h3>{question.question}</h3>
-                {question.options.map((option, index) => (
-                  <div key={index} className="option">
-
-                    <input
-                      type="radio"
-                      id={`option-${question.id}-${index}`}
-                      name={`question-${question.id}`}
-                      value={option}
-                      checked={selectedOption[question.id] === option}
-                      onChange={(e) => handleOptionChange(question.id, e)}
-                      disabled={isSubmitted[question.id]}
-                    />
-                    <label htmlFor={`option-${question.id}-${index}`}>{option}</label>
-                    </div>
-                ))}
+                <input
+                  type="text"
+                  value={userInput[question.id] || ''}
+                  onChange={(e) => handleInputChange(question.id, e)}
+                  disabled={isSubmitted[question.id]}
+                  placeholder="Your answer here"
+                />
                 <button
                   onClick={() => handleSubmit(question.id)}
-                  disabled={isSubmitted[question.id] || !selectedOption[question.id]}
+                  disabled={isSubmitted[question.id] || !userInput[question.id]}
                 >
                   Submit
                 </button>
@@ -153,5 +130,4 @@ const MCQ = () => {
   );
 };
 
-export default MCQ;
-
+export default FILLUPS;

@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* App Container */
+  .app {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 20%;
+    background-color: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .regenerate-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .settings {
+    width: 100%;
+  }
+  
+  .setting-group {
+    margin-bottom: 20px;
+  }
+  
+  .setting-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .difficulty-options label {
+    margin-right: 10px;
+  }
+  
+  .difficulty-options input {
+    margin-right: 5px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* QA Pane */
+  .qa-pane {
+    width: 60%;
+    padding: 20px;
+    background-color: white;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+  
+  .qa-pane h2 {
+    margin-top: 0;
+  }
+  
+  .subjective-question {
+    margin-bottom: 20px;
+  }
+  
+  .subjective-question h3 {
+    margin-top: 0;
+  }
+  
+  .subjective-answer {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    min-height: 100px;
+  }
+  
+  .feedback {
+    color: green;
+    font-weight: bold;
+  }
+  
+  /* Extras Pane */
+  .extras {
+    width: 20%;
+    padding: 20px;
+  }
+  
+  .extras h3 {
+    margin-top: 0;
+  }
+  
+  .extras ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .extras ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1024px) {
+    .app {
+      flex-direction: column;
+    }
+  
+    .sidebar, .qa-pane, .extras {
+      width: 100%;
+    }
+  }
+  

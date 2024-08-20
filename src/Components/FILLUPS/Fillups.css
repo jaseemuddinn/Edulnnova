@@ -1,0 +1,131 @@
+/* General styles for the app */
+.app {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 20%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .regenerate-btn {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .setting-group {
+    margin-bottom: 20px;
+  }
+  
+  .setting-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .difficulty-options label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .difficulty-options input {
+    margin-right: 10px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  /* QA Pane styles */
+  .qa-pane {
+    width: 60%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-left: 2px solid #f0f0f0;
+    border-right: 2px solid #f0f0f0;
+  }
+  
+  .qa-pane h2 {
+    margin-bottom: 20px;
+  }
+  
+  .question-type {
+    margin-bottom: 30px;
+  }
+  
+  .question-type h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    /* background-color: #4CAF50; */
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+  }
+  
+  .feedback {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555555;
+  }
+  
+  /* Extras styles */
+  .extras {
+    width: 20%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .extras h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .extras ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .extras ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .extras ul li::before {
+    content: "• ";
+    /* color: #4CAF50; */
+  }
+  
