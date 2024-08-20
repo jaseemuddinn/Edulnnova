@@ -176,7 +176,7 @@ const AIquestions = ({ onBackToHome }) => {
         {step === 2 && (
           <div className="topic-selection">
             <form className="topic-form" onSubmit={handleTopicSubmit}>
-              <h2>
+              <h2 id="feature-id">
                 Step 1: Choose Your Topic for{" "}
                 {feature === "explore" ? "Explore" : "Quick"}
               </h2>
@@ -213,7 +213,7 @@ const AIquestions = ({ onBackToHome }) => {
 
         {step === 3 && (
           <div className="question-type-selection">
-            <h2>
+            <h2 id="feature-id">
               Step 2: {feature === "explore" ? "Select" : "Practice"} Question
               Type
             </h2>
@@ -284,7 +284,7 @@ const AIquestions = ({ onBackToHome }) => {
 
         {step === 4 && (
           <div className="question-section" style={{ height: "100vh" }}>
-            <h2>
+            <h2 id="feature-id">
               Practice {questionType.toUpperCase()} for {topic}
             </h2>
             {error && <p className="error-message">{error}</p>}

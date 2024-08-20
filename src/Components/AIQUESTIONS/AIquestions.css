@@ -146,7 +146,7 @@ button:hover {
 }
 
 .question-type-buttons button:hover {
-  transform: scale(1.23);
+  transform: scale(1.);
 }
 
 /* question-type-buttons {
